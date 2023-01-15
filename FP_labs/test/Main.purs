@@ -7,5 +7,5 @@ import Effect.Class.Console (log)
 
 main :: Effect Unit
 main = do
-  log "🍝"
+  log "test"
   log "You should add some tests."
