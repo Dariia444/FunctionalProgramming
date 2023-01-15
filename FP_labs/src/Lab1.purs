@@ -12,7 +12,6 @@ import Data.List (List(..))
 import Effect (Effect)
 import Effect.Class.Console (log)
 import Effect.Console (log)
-import Partial.Unsafe (unsafePartial)
 import Prelude (Unit, show, ($), (+))
 
 
@@ -31,14 +30,13 @@ snoc (Cons head tail) x = Cons head $ snoc tail x
 length :: forall a. Array a -> Int
 length [] = 0
 length arr = 1 + length
-  (unsafePartial tail arr)
 -- test::Effect Unit
 -- test = do 
   -- log $ "Singleton"
   -- log $ show $ singleton "item"
   -- log $ "Null empty"
   -- log $ show $ null (Nil)
-  -- log $ "Mull nonEmpty"
+  -- log $ "Null nonEmpty"
   -- log $ show $ null ("item" : Nil)
   -- log $ "Snoc"
   -- log $ show $ snoc ("item" :Nil) "item2"
